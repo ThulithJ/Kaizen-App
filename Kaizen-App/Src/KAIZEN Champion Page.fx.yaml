@@ -1,0 +1,268 @@
+"'KAIZEN Champion Page' As screen":
+
+    Rectangle5_5 As rectangle:
+        BorderStyle: =BorderStyle.None
+        Fill: =RGBA(0, 121, 146, 1)
+        Height: =1136
+        Width: =640
+        ZIndex: =1
+
+    Button4_5 As button:
+        BorderThickness: =0
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =908
+        HoverFill: =RGBA(255, 255, 255, 1)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =80
+        RadiusTopRight: =80
+        Size: =24
+        Text: =""
+        Width: =640
+        Y: =226
+        ZIndex: =2
+
+    Label4_2 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.Lato
+        Height: =57
+        Size: =22
+        Text: ="KAIZEN Champion Page"
+        Width: =341
+        X: =149
+        Y: =123
+        ZIndex: =3
+
+    Label5_3 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Semibold
+        Height: =72
+        Size: =28
+        Text: ="Welcome Chamith!"
+        Width: =375
+        X: =136
+        Y: =64
+        ZIndex: =4
+
+    Group5_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =28
+
+        Label6_5 As label:
+            Color: =RGBA(0, 121, 146, 1)
+            Font: =Font.'Lato Black'
+            Height: =87
+            OnSelect: =Navigate('Suggested KAIZEN List',ScreenTransition.Cover)
+            Size: =28
+            Text: ="Suggested KAIZEN List"
+            Width: =419
+            X: =144
+            Y: =332
+            ZIndex: =8
+
+        Rectangle6_20 As rectangle:
+            Fill: =RGBA(0, 121, 146, 1)
+            Height: =1
+            OnSelect: =Navigate('Suggested KAIZEN List',ScreenTransition.Cover)
+            Width: =552
+            X: =44
+            Y: =446
+            ZIndex: =9
+
+        Icon6_5 As icon.ChevronRight:
+            Color: =RGBA(0, 121, 146, 1)
+            Height: =37
+            Icon: =Icon.ChevronRight
+            OnSelect: =Navigate('Suggested KAIZEN List',ScreenTransition.Cover)
+            Width: =37
+            X: =559
+            Y: =358
+            ZIndex: =16
+
+    Group6_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =28
+
+        Label6_6 As label:
+            Color: =RGBA(0, 121, 146, 1)
+            Font: =Font.'Lato Black'
+            Height: =87
+            OnSelect: =Navigate('Approved KAIZEN LIst',ScreenTransition.Cover)
+            Size: =28
+            Text: ="Approved KAIZEN List"
+            Width: =415
+            X: =144
+            Y: =471
+            ZIndex: =12
+
+        Rectangle6_21 As rectangle:
+            Fill: =RGBA(0, 121, 146, 1)
+            Height: =1
+            OnSelect: =Navigate('Approved KAIZEN LIst',ScreenTransition.Cover)
+            Width: =552
+            X: =44
+            Y: =578
+            ZIndex: =13
+
+        Icon6_6 As icon.ChevronRight:
+            Color: =RGBA(0, 121, 146, 1)
+            Height: =37
+            Icon: =Icon.ChevronRight
+            OnSelect: =Navigate('Approved KAIZEN LIst',ScreenTransition.Cover)
+            Width: =37
+            X: =559
+            Y: =496
+            ZIndex: =17
+
+    Group7_2 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =28
+
+        Label6_7 As label:
+            Color: =RGBA(0, 121, 146, 1)
+            Font: =Font.'Lato Black'
+            Height: =87
+            OnSelect: =Navigate('Start a Voting Session',ScreenTransition.Cover)
+            Size: =28
+            Text: ="Start a Voting Session"
+            Width: =415
+            X: =144
+            Y: =607
+            ZIndex: =14
+
+        Rectangle6_22 As rectangle:
+            Fill: =RGBA(0, 121, 146, 1)
+            Height: =1
+            OnSelect: =Navigate('Start a Voting Session',ScreenTransition.Cover)
+            Width: =552
+            X: =44
+            Y: =709
+            ZIndex: =15
+
+        Icon6_7 As icon.ChevronRight:
+            Color: =RGBA(0, 121, 146, 1)
+            Height: =37
+            Icon: =Icon.ChevronRight
+            OnSelect: =Navigate('Start a Voting Session',ScreenTransition.Cover)
+            Width: =37
+            X: =559
+            Y: =632
+            ZIndex: =18
+
+    Group21 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =31
+
+        Icon2_14 As icon.ChevronLeft:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =26
+            Icon: =Icon.ChevronLeft
+            OnSelect: =Navigate('Home Screen',ScreenTransition.CoverRight)
+            Width: =26
+            X: =18
+            Y: =34
+            ZIndex: =19
+
+        Label1_7 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.Lato
+            Height: =34
+            OnSelect: =Navigate('Home Screen',ScreenTransition.CoverRight)
+            Size: =18
+            Text: ="Back"
+            Width: =69
+            X: =48
+            Y: =30
+            ZIndex: =20
+
+    Group7_3 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =31
+
+        Label6_8 As label:
+            Color: =RGBA(0, 121, 146, 1)
+            Font: =Font.'Lato Black'
+            Height: =87
+            OnSelect: =Navigate('Add or Remove User')
+            Size: =28
+            Text: ="Add or Remove User"
+            Width: =415
+            X: =148
+            Y: =734
+            ZIndex: =28
+
+        Rectangle6_23 As rectangle:
+            Fill: =RGBA(0, 121, 146, 1)
+            Height: =1
+            OnSelect: =Navigate('Add or Remove User')
+            Width: =552
+            X: =48
+            Y: =836
+            ZIndex: =29
+
+        Icon6_8 As icon.ChevronRight:
+            Color: =RGBA(0, 121, 146, 1)
+            Height: =37
+            Icon: =Icon.ChevronRight
+            OnSelect: =Navigate('Add or Remove User')
+            Width: =37
+            X: =563
+            Y: =759
+            ZIndex: =30
+
+    Group7_4 As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =34
+
+        Label6_9 As label:
+            Color: =RGBA(0, 121, 146, 1)
+            Font: =Font.'Lato Black'
+            Height: =87
+            OnSelect: =Navigate('KAIZEN Evaluvation',ScreenTransition.CoverRight)
+            Size: =28
+            Text: ="KAIZEN Evaluation"
+            Width: =415
+            X: =148
+            Y: =866
+            ZIndex: =31
+
+        Rectangle6_24 As rectangle:
+            Fill: =RGBA(0, 121, 146, 1)
+            Height: =1
+            OnSelect: =Navigate('KAIZEN Evaluvation',ScreenTransition.CoverRight)
+            Width: =552
+            X: =48
+            Y: =968
+            ZIndex: =32
+
+        Icon6_9 As icon.ChevronRight:
+            Color: =RGBA(0, 121, 146, 1)
+            Height: =37
+            Icon: =Icon.ChevronRight
+            OnSelect: =Navigate('KAIZEN Evaluvation',ScreenTransition.CoverRight)
+            Width: =37
+            X: =563
+            Y: =891
+            ZIndex: =33
+

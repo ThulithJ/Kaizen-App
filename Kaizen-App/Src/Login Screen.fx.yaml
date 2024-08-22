@@ -1,0 +1,95 @@
+"'Login Screen' As screen":
+
+    Rectangle4 As rectangle:
+        Fill: =RGBA(0, 121, 146, 1)
+        Height: =1136
+        Width: =640
+        ZIndex: =1
+
+    Button2_1 As button:
+        BorderThickness: =0
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =730
+        HoverFill: =RGBA(255, 255, 255, 1)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =80
+        RadiusTopRight: =80
+        Size: =24
+        Text: =""
+        Width: =640
+        Y: =406
+        ZIndex: =2
+
+    Image2 As image:
+        Height: =258
+        Image: ='1606822989-methode-kaizen-removebg-preview'
+        Width: =447
+        X: =96
+        Y: =133
+        ZIndex: =3
+
+    Label2_1 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.'Lato Black'
+        FontWeight: =FontWeight.Bold
+        Height: =70
+        Size: =35
+        Text: ="Autonomation Kaizen"
+        Width: =607
+        X: =15
+        Y: =49
+        ZIndex: =4
+
+    Login As button:
+        Fill: =RGBA(0, 121, 146, 1)
+        Font: =Font.Lato
+        Height: =107
+        HoverFill: =RGBA(0, 121, 146, 1)
+        OnSelect: |-
+            =Set(LoginName,User().FullName);
+            If(LookUp(Autonomation_5S_Users,Email=User().Email,'KAIZEN Access Level')="Admin",Set(Admin,true),Set(Admin,false));
+            If(IsBlank(LookUp(Autonomation_5S_Users,Email=User().Email)),Notify("Access Denied");,
+            Navigate('Home Screen'))
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Size: =28
+        Text: ="LOGIN"
+        Width: =555
+        X: =42
+        Y: =779
+        ZIndex: =5
+
+    Login_1 As button:
+        Fill: =RGBA(168, 0, 0, 1)
+        Font: =Font.Lato
+        Height: =107
+        HoverFill: =RGBA(168, 0, 0, 1)
+        OnSelect: =Exit()
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Size: =28
+        Text: ="QUIT"
+        Width: =555
+        X: =42
+        Y: =941
+        ZIndex: =6
+
+    Label3 As label:
+        Align: =Align.Center
+        Color: =RGBA(0, 121, 146, 1)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Semibold
+        Height: =67
+        Size: =30
+        Text: ="Please login to continue"
+        Width: =440
+        X: =99
+        Y: =534
+        ZIndex: =7
+

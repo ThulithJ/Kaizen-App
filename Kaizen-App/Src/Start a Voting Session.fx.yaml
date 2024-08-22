@@ -1,0 +1,261 @@
+"'Start a Voting Session' As screen":
+
+    Rectangle5_10 As rectangle:
+        Fill: =RGBA(0, 121, 146, 1)
+        Height: =1136
+        Width: =640
+        ZIndex: =1
+
+    Image3_5 As image:
+        Height: =265
+        Image: ='2'
+        Width: =257
+        X: =370
+        Y: =19
+        ZIndex: =2
+
+    Button4_10 As button:
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =851
+        HoverFill: =RGBA(255, 255, 255, 1)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =80
+        RadiusTopRight: =80
+        Size: =24
+        Text: =""
+        Width: =640
+        Y: =285
+        ZIndex: =3
+
+    Label5_8 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Semibold
+        Height: =142
+        Size: =28
+        Text: ="Start a Voting Session"
+        Width: =263
+        X: =48
+        Y: =103
+        ZIndex: =4
+
+    Label17 As label:
+        Color: =RGBA(0, 121, 146, 1)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =22
+        Text: ="Select KAIZEN Month"
+        Width: =560
+        X: =40
+        Y: =358
+        ZIndex: =7
+
+    ComboBox2 As combobox:
+        BorderStyle: =BorderStyle.None
+        ChevronBackground: =RGBA(255, 255, 255, 1)
+        ChevronFill: =RGBA(0, 121, 146, 1)
+        ChevronHoverBackground: =RGBA(255, 255, 255, 1)
+        ChevronHoverFill: =RGBA(0, 121, 146, 1)
+        Color: =RGBA(116, 116, 116, 1)
+        DisplayFields: =["Value"]
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        HoverBorderColor: =
+        HoverColor: =RGBA(116, 116, 116, 1)
+        HoverFill: =RGBA(204, 231, 246, 1)
+        InputTextPlaceholder: ="Search & Select Month"
+        Items: =SortByColumns(Distinct(Autonomation_KAIZEN_Submission,Month),"Value",SortOrder.Ascending)
+        PaddingLeft: =0
+        PressedFill: =RGBA(255, 255, 255, 1)
+        SearchFields: =["Value"]
+        SearchItems: =Search(SortByColumns(Distinct(Autonomation_KAIZEN_Submission,Month),"Value",SortOrder.Ascending),ComboBox2.SearchText,Value)
+        SelectionFill: =RGBA(0, 0, 0, 0)
+        SelectMultiple: =false
+        Size: =22
+        Width: =575
+        X: =44
+        Y: =428
+        ZIndex: =8
+
+    Label17_2 As label:
+        Align: =Align.Center
+        Color: =RGBA(0, 121, 146, 1)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =22
+        Text: ="Voting Session will automatically ends in"
+        Width: =463
+        X: =88
+        Y: =799
+        ZIndex: =11
+
+    Group1 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =11
+
+        Toggle1 As toggleSwitch:
+            DisplayMode: =If(IsBlank(ComboBox2.Selected.Value),DisplayMode.Disabled,DisplayMode.Edit)
+            Height: =51
+            OnCheck: |+
+                =Set(isTimerRunning, true)
+                
+            OnUncheck: |
+                =//Set(VarVote,"False");
+                Set(isTimerRunning, false);
+                Reset(Timer1);
+                ClearCollect(UserCollection, Autonomation_5S_Users);
+                ForAll(
+                    UserCollection,
+                    Patch(
+                        Autonomation_5S_Users,
+                        LookUp(Autonomation_5S_Users, ID = UserCollection[@ID]),
+                        {
+                            'Voting Access': ""
+                        }
+                    )
+                );
+                Reset(ComboBox2)
+            ShowLabel: =false
+            Size: =21
+            TrueFill: =RGBA(255, 153, 230, 1)
+            Width: =116
+            X: =503
+            Y: =602
+            ZIndex: =9
+
+        Label17_1 As label:
+            Color: =RGBA(0, 121, 146, 1)
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =70
+            Size: =22
+            Text: ="Start a Session"
+            Width: =463
+            X: =40
+            Y: =593
+            ZIndex: =10
+
+    Timer1 As timer:
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(0, 121, 146, 1)
+        DisplayMode: =DisplayMode.View
+        Duration: =7200000
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.Lato
+        Height: =98
+        HoverColor: =RGBA(0, 121, 146, 1)
+        HoverFill: =
+        OnTimerEnd: |-
+            =Set(isTimerRunning, false);
+            UpdateContext({toggleState: false})
+        PressedColor: =RGBA(0, 121, 146, 1)
+        PressedFill: =
+        Reset: =If(Toggle1.Value=true,false,true)
+        Size: =22
+        Start: =isTimerRunning
+        Text: |+
+            =//Text(Time(0, 0, Timer1.Value/1000), "hh:mm:ss")
+            Text(
+               Abs(Min(0, (Now() + Timer1.Duration) - Now()) - DateValue("00:00:00")),
+               "[$-en-US]hh:mm:ss"
+            )
+            
+            
+        Visible: =false
+        Width: =196
+        Y: =895
+        ZIndex: =12
+
+    Button11 As button:
+        DisplayMode: |-
+            =//If(VarVote="True",DisplayMode.Edit,DisplayMode.Disabled)
+            If(Toggle1.Value=true,DisplayMode.Edit,DisplayMode.Disabled)
+        Fill: =RGBA(0, 121, 146, 1)
+        Font: =Font.Lato
+        Height: =62
+        HoverFill: =RGBA(0, 121, 146, 1)
+        OnSelect: |-
+            =//ForAll(Au(Patch(Autonomation_5S_Users,Defaults(Autonomation_5S_Users),{'Voting Access':"Yes"});
+            //ForAll(Autonomation_5S_Users,Patch('Voting Access':"Yes"));
+            /*ForAll(
+                Autonomation_5S_Users,
+                Patch(
+                    Autonomation_5S_Users,
+                    Defaults(Autonomation_5S_Users),
+                    {
+                        'Voting Access': "Yes"
+                    }
+                )
+            );*/
+            ClearCollect(UserCollection, Autonomation_5S_Users);
+            ForAll(
+                UserCollection,
+                Patch(
+                    Autonomation_5S_Users,
+                    LookUp(Autonomation_5S_Users, ID = UserCollection[@ID]),
+                    {
+                        'Voting Access': "Yes"
+                    }
+                )
+            );
+            Navigate('Home Screen')
+        RadiusBottomLeft: =40
+        RadiusBottomRight: =40
+        RadiusTopLeft: =40
+        RadiusTopRight: =40
+        Size: =22
+        Text: ="Home Screen"
+        Width: =248
+        X: =196
+        Y: =1020
+        ZIndex: =13
+
+    Label2 As label:
+        Align: =Align.Center
+        Height: =70
+        Size: =21
+        Text: |-
+            =Text(Time(0, 0, Timer1.Duration/1000 - Timer1.Value/1000), "hh:mm:ss")
+        Width: =246
+        X: =197
+        Y: =909
+        ZIndex: =14
+
+    Group26 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =14
+
+        Icon2_19 As icon.ChevronLeft:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =26
+            Icon: =Icon.ChevronLeft
+            OnSelect: =Navigate('KAIZEN Champion Page',ScreenTransition.CoverRight)
+            Width: =26
+            X: =18
+            Y: =34
+            ZIndex: =5
+
+        Label1_12 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.Lato
+            Height: =34
+            OnSelect: =Navigate('KAIZEN Champion Page',ScreenTransition.CoverRight)
+            Size: =18
+            Text: ="Back"
+            Width: =69
+            X: =48
+            Y: =30
+            ZIndex: =6
+

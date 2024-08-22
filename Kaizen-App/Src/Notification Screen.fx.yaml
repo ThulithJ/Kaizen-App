@@ -1,0 +1,209 @@
+"'Notification Screen' As screen":
+
+    Rectangle5_3 As rectangle:
+        BorderStyle: =BorderStyle.None
+        Fill: =RGBA(0, 121, 146, 1)
+        Height: =1136
+        Width: =640
+        ZIndex: =1
+
+    Rectangle7 As rectangle:
+        BorderStyle: =BorderStyle.None
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =146
+        Width: =132
+        X: =508
+        ZIndex: =2
+
+    Button4_3 As button:
+        BorderThickness: =0
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =1004
+        HoverFill: =RGBA(255, 255, 255, 1)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =80
+        RadiusTopRight: =0
+        Size: =24
+        Text: =""
+        Width: =640
+        Y: =132
+        ZIndex: =3
+
+    Circle3_1 As circle:
+        BorderStyle: =BorderStyle.None
+        Fill: =RGBA(184, 0, 0, 1)
+        Height: =30
+        Width: =30
+        X: =548
+        Y: =30
+        ZIndex: =7
+
+    "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
+        '#CopilotOverlayLabel': ="Filtered"
+        DelayItemLoading: =true
+        Height: =855
+        Items: =CustomGallerySample
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =135
+        Width: =552
+        X: =44
+        Y: =252
+        ZIndex: =9
+
+        Title3 As label:
+            Font: =Font.Lato
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: ="KAIZEN NAME"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 86
+            X: =16
+            Y: =30
+            ZIndex: =1
+
+        Subtitle3 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =50
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: ="Your KAIZEN is approved by the Kaizen Champion. Implement it and before 5th of next Month."
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title3.Width
+            X: =Title3.X
+            Y: =Title3.Y + Title3.Height
+            ZIndex: =2
+
+        NextArrow3 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Color: =RGBA(166, 166, 166, 1)
+            Height: =50
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Tooltip: ="View item details"
+            Width: =50
+            X: =Parent.TemplateWidth - Self.Width - 12
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =3
+
+        Separator3 As rectangle:
+            Fill: =RGBA(237, 237, 237, 1)
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =4
+
+        Rectangle9 As rectangle:
+            Fill: =RGBA(116, 116, 116, 1)
+            Height: =Parent.TemplateHeight - Separator3.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =4
+            ZIndex: =5
+
+    Button8 As button:
+        BorderStyle: =BorderStyle.None
+        Fill: =RGBA(0, 121, 146, 1)
+        Font: =Font.Lato
+        Height: =48
+        RadiusBottomLeft: =30
+        RadiusBottomRight: =30
+        RadiusTopLeft: =30
+        RadiusTopRight: =30
+        Size: =18
+        Text: ="Clear All"
+        Width: =192
+        X: =98
+        Y: =164
+        ZIndex: =10
+
+    Button8_1 As button:
+        BorderStyle: =BorderStyle.None
+        Fill: =RGBA(0, 121, 146, 1)
+        Font: =Font.Lato
+        Height: =48
+        RadiusBottomLeft: =30
+        RadiusBottomRight: =30
+        RadiusTopLeft: =30
+        RadiusTopRight: =30
+        Size: =18
+        Text: ="Mark as read"
+        Width: =192
+        X: =350
+        Y: =164
+        ZIndex: =11
+
+    Group27 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =12
+
+        Icon2_7 As icon.ChevronLeft:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =26
+            Icon: =Icon.ChevronLeft
+            OnSelect: =Navigate('Home Screen')
+            Width: =26
+            X: =18
+            Y: =34
+            ZIndex: =4
+
+        Label1_5 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.Lato
+            Height: =34
+            OnSelect: =Navigate('Home Screen')
+            Size: =18
+            Text: ="Back"
+            Width: =69
+            X: =48
+            Y: =30
+            ZIndex: =5
+
+    Group31 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =12
+
+        Icon8_1 As icon.Bell:
+            Color: =RGBA(0, 121, 146, 1)
+            Height: =48
+            Icon: =Icon.Bell
+            OnSelect: =Navigate('Home Screen')
+            Width: =48
+            X: =548
+            Y: =34
+            ZIndex: =6
+
+        Label13_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.Lato
+            Height: =24
+            OnSelect: =Navigate('Home Screen')
+            Size: =15
+            Text: ="1"
+            Width: =24
+            X: =551
+            Y: =33
+            ZIndex: =8
+

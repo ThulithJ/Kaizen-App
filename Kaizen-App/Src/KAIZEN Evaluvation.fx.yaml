@@ -1,0 +1,302 @@
+"'KAIZEN Evaluvation' As screen":
+    OnVisible: =Refresh(Autonomation_KAIZEN_Voting)
+
+    Rectangle5_11 As rectangle:
+        Fill: =RGBA(0, 121, 146, 1)
+        Height: =1136
+        Width: =640
+        ZIndex: =1
+
+    Button4_11 As button:
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =960
+        HoverFill: =RGBA(255, 255, 255, 1)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =80
+        RadiusTopRight: =80
+        Size: =24
+        Text: =""
+        Width: =640
+        Y: =176
+        ZIndex: =3
+
+    Label5_9 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Semibold
+        Height: =142
+        Size: =28
+        Text: ="KAIZEN Evaluvation"
+        Width: =530
+        X: =44
+        Y: =34
+        ZIndex: =4
+
+    "Gallery4 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        DelayItemLoading: =true
+        Height: =850
+        Items: =Distinct(Filter(Autonomation_KAIZEN_Voting,Month=Dropdown2.Selected.Value),'KAIZEN ID')
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =204
+        Y: =265
+        ZIndex: =7
+
+        Subtitle1 As label:
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Value
+            VerticalAlign: =VerticalAlign.Top
+            Width: =
+            X: =
+            Y: =
+            ZIndex: =3
+
+        NextArrow2 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(166, 166, 166, 1)
+            DisabledBorderColor: =RGBA(56, 56, 56, 1)
+            DisabledColor: =RGBA(119, 119, 119, 1)
+            Height: =50
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Tooltip: ="View item details"
+            Width: =50
+            X: =Parent.TemplateWidth - Self.Width - 12
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =4
+
+        Separator2 As rectangle:
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =5
+
+        Rectangle8 As rectangle:
+            Height: =Parent.TemplateHeight - Separator2.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =4
+            ZIndex: =6
+
+        TextInput4 As text:
+            Default: ="ID"
+            Height: =37
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =12
+            Width: =98
+            X: =52
+            Y: =77
+            ZIndex: =7
+
+        TextInput4_1 As text:
+            Default: ="Marks Recived"
+            Height: =37
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =12
+            Width: =138
+            X: =150
+            Y: =77
+            ZIndex: =8
+
+        TextInput4_2 As text:
+            Default: ="No of Auditors"
+            Height: =37
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =12
+            Width: =139
+            X: =288
+            Y: =77
+            ZIndex: =9
+
+        TextInput4_3 As text:
+            Default: ="Average Total"
+            Height: =37
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =12
+            Width: =124
+            X: =427
+            Y: =77
+            ZIndex: =10
+
+        TextInput4_4 As text:
+            Default: =ThisItem.Value
+            DisplayMode: =DisplayMode.View
+            Height: =70
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =12
+            Width: =98
+            X: =52
+            Y: =114
+            ZIndex: =11
+
+        TextInput4_5 As text:
+            Default: |-
+                =If(!IsBlank(TextInput4_4.Text),
+                Sum(
+                    Filter(
+                        Autonomation_KAIZEN_Voting,
+                        ThisItem.Value='KAIZEN ID'
+                        ),
+                        ToTal2
+                ))
+            DisplayMode: =DisplayMode.View
+            Height: =70
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =12
+            Width: =138
+            X: =150
+            Y: =114
+            ZIndex: =12
+
+        TextInput4_6 As text:
+            Default: |-
+                =CountRows(
+                    Filter(
+                        Autonomation_KAIZEN_Voting,
+                        ThisItem.Value='KAIZEN ID'
+                    )
+                )
+            DisplayMode: =DisplayMode.View
+            Height: =70
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =12
+            Width: =139
+            X: =288
+            Y: =114
+            ZIndex: =13
+
+        TextInput4_7 As text:
+            Default: |
+                =If(Value((TextInput4_6).Text)=0,0,
+                Value(TextInput4_5.Text) / Value(TextInput4_6.Text))
+            DisplayMode: =DisplayMode.View
+            Height: =70
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =12
+            Width: =124
+            X: =427
+            Y: =114
+            ZIndex: =14
+
+        Label1 As label:
+            Height: =31
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: =LookUp(Autonomation_KAIZEN_Voting,ThisItem.Value='KAIZEN ID',Title)
+            Width: =560
+            X: =52
+            Y: =21
+            ZIndex: =15
+
+    Dropdown2 As dropdown:
+        Height: =50
+        Items: =SortByColumns(Distinct(Autonomation_KAIZEN_Submission,Month),"Value",SortOrder.Ascending)
+        Size: =15
+        Width: =157
+        X: =457
+        Y: =80
+        ZIndex: =8
+
+    Group20_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =8
+
+        Icon2_20 As icon.ChevronLeft:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =26
+            Icon: =Icon.ChevronLeft
+            OnSelect: =Navigate('KAIZEN Champion Page',ScreenTransition.CoverRight)
+            Width: =26
+            X: =18
+            Y: =34
+            ZIndex: =5
+
+        Label1_13 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.Lato
+            Height: =34
+            OnSelect: =Navigate('KAIZEN Champion Page',ScreenTransition.CoverRight)
+            Size: =18
+            Text: ="Back"
+            Width: =69
+            X: =48
+            Y: =30
+            ZIndex: =6
+
+    Button2 As button:
+        BorderStyle: =BorderStyle.None
+        Fill: =RGBA(54, 176, 75, 1)
+        Height: =38
+        OnSelect: |
+            =ForAll(
+                Gallery4.AllItems,
+                Patch(
+                    Autonomation_KAIZEN_Submission,
+                    LookUp(
+                        Autonomation_KAIZEN_Submission,ID = Value(TextInput4_4.Text )),
+                        {
+                           'Marks Recieved':Value(TextInput4_5.Text),
+                           'Number of Auditors':Value(TextInput4_6.Text),
+                           'Average Total':Value(TextInput4_7.Text),
+                           Status:"Completed"
+                        }
+                )
+            );
+            Navigate('KAIZEN Champion Page')
+        Text: ="Calculate"
+        Width: =237
+        X: =337
+        Y: =216
+        ZIndex: =9
+

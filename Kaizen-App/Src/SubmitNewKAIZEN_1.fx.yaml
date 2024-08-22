@@ -1,0 +1,164 @@
+SubmitNewKAIZEN_1 As screen:
+    Fill: =
+
+    Rectangle1_1 As rectangle:
+        Fill: =RGBA(0, 121, 146, 1)
+        Height: =1136
+        Width: =640
+        ZIndex: =1
+
+    Button1_1 As button:
+        BorderThickness: =0
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =804
+        HoverFill: =RGBA(255, 255, 255, 1)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =80
+        RadiusTopRight: =80
+        Size: =24
+        Text: =""
+        Width: =640
+        Y: =332
+        ZIndex: =2
+
+    Image1_1 As image:
+        Height: =309
+        Image: ='3'
+        Width: =250
+        X: =390
+        Y: =23
+        ZIndex: =3
+
+    Label8_1 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Bold
+        Height: =70
+        Size: =22
+        Text: ="Submit a new KAIZEN"
+        Width: =314
+        X: =44
+        Y: =81
+        ZIndex: =4
+
+    Label10_1 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.Lato
+        Height: =127
+        Size: =22
+        Text: ="Please provide a name for your KAIZEN"
+        Width: =346
+        X: =44
+        Y: =151
+        ZIndex: =7
+
+    Label11_1 As label:
+        Color: =RGBA(0, 121, 146, 1)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =22
+        Text: ="KAIZEN Name"
+        Width: =209
+        X: =44
+        Y: =391
+        ZIndex: =8
+
+    Rectangle6_5 As rectangle:
+        Fill: =RGBA(0, 121, 146, 1)
+        Height: =1
+        Width: =545
+        X: =44
+        Y: =531
+        ZIndex: =10
+
+    Button3_2 As button:
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(0, 121, 146, 1)
+        Font: =Font.Lato
+        Height: =70
+        HoverFill: =RGBA(0, 121, 146, 1)
+        OnSelect: |-
+            =Set(VarKName,TextInput1.Text);
+            If(IsBlank(TextInput1.Text),Notify("Fields marked as * are required"),Navigate(SubmitNewKAIZEN_2))
+        RadiusBottomLeft: =40
+        RadiusBottomRight: =40
+        RadiusTopLeft: =40
+        RadiusTopRight: =40
+        Size: =24
+        Text: ="Next"
+        Width: =545
+        X: =44
+        Y: =890
+        ZIndex: =11
+
+    Button3_3 As button:
+        Fill: =RGBA(116, 116, 116, 1)
+        Font: =Font.Lato
+        Height: =70
+        HoverFill: =RGBA(116, 116, 116, 1)
+        OnSelect: |-
+            =Reset(ComboBox1_10);
+            Reset(ComboBox1);
+            Reset(ComboBox1_1);
+            Reset(TextInput1);
+            Navigate('Home Screen')
+        RadiusBottomLeft: =40
+        RadiusBottomRight: =40
+        RadiusTopLeft: =40
+        RadiusTopRight: =40
+        Size: =24
+        Text: ="Cancel"
+        Width: =545
+        X: =44
+        Y: =998
+        ZIndex: =12
+
+    TextInput1 As text:
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(116, 116, 116, 1)
+        Default: =""
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Bold
+        Height: =70
+        HintText: ="Type a KAIZEN name"
+        HoverFill: =RGBA(0, 0, 0, 0)
+        PaddingLeft: =5
+        Size: =22
+        Width: =560
+        X: =44
+        Y: =462
+        ZIndex: =13
+
+    Group10 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =14
+
+        Label9_1 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.Lato
+            Height: =47
+            OnSelect: =Navigate(SubmitNewKAIZEN_4,ScreenTransition.CoverRight)
+            Size: =18
+            Text: ="Back"
+            Width: =89
+            X: =44
+            Y: =23
+            ZIndex: =5
+
+        Icon2_2 As icon.ChevronLeft:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =26
+            Icon: =Icon.ChevronLeft
+            OnSelect: =Navigate(SubmitNewKAIZEN_4,ScreenTransition.CoverRight)
+            Width: =26
+            X: =18
+            Y: =34
+            ZIndex: =6
+

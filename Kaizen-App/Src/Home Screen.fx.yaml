@@ -1,0 +1,471 @@
+"'Home Screen' As screen":
+
+    Rectangle5 As rectangle:
+        BorderStyle: =BorderStyle.None
+        Fill: =RGBA(0, 121, 146, 1)
+        Height: =1136
+        Width: =640
+        ZIndex: =1
+
+    Button4 As button:
+        BorderThickness: =0
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =859
+        HoverFill: =RGBA(255, 255, 255, 1)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =80
+        RadiusTopRight: =80
+        Size: =24
+        Text: =""
+        Width: =640
+        Y: =277
+        ZIndex: =2
+
+    Label4 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.Lato
+        Height: =57
+        Size: =22
+        Text: =If(Admin=true,"Admin","User")
+        X: =245
+        Y: =79
+        ZIndex: =3
+
+    Label5 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Semibold
+        Height: =72
+        Size: =28
+        Text: ="Welcome " & User().FullName
+        Width: =514
+        X: =62
+        Y: =131
+        ZIndex: =4
+
+    Circle1 As circle:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =150
+        Width: =150
+        X: =244
+        Y: =210
+        ZIndex: =5
+
+    Icon8 As icon.Bell:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =48
+        Icon: =Icon.Bell
+        OnSelect: =Navigate('Notification Screen')
+        Visible: =false
+        Width: =48
+        X: =548
+        Y: =34
+        ZIndex: =25
+
+    Group5 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =28
+
+        Label6 As label:
+            Color: =RGBA(0, 121, 146, 1)
+            Font: =Font.'Lato Black'
+            Height: =87
+            OnSelect: =Navigate(SubmitNewKAIZEN,ScreenTransition.Cover)
+            Size: =28
+            Text: ="Submit a new KAIZEN"
+            Width: =390
+            X: =144
+            Y: =402
+            ZIndex: =8
+
+        Rectangle6 As rectangle:
+            Fill: =RGBA(0, 121, 146, 1)
+            Height: =1
+            OnSelect: =Navigate(SubmitNewKAIZEN,ScreenTransition.Cover)
+            Width: =552
+            X: =44
+            Y: =516
+            ZIndex: =9
+
+        Icon3 As icon.Newspaper:
+            Color: =RGBA(255, 153, 230, 1)
+            Icon: =Icon.Newspaper
+            OnSelect: =Navigate(SubmitNewKAIZEN,ScreenTransition.Cover)
+            Width: =52
+            X: =57
+            Y: =424
+            ZIndex: =10
+
+        Icon4 As icon.Add:
+            Color: =RGBA(255, 153, 230, 1)
+            Height: =45
+            Icon: =Icon.Add
+            OnSelect: =Navigate(SubmitNewKAIZEN,ScreenTransition.Cover)
+            Width: =45
+            X: =78
+            Y: =409
+            ZIndex: =11
+
+        Icon6 As icon.ChevronRight:
+            Color: =RGBA(0, 121, 146, 1)
+            Height: =37
+            Icon: =Icon.ChevronRight
+            OnSelect: =Navigate(SubmitNewKAIZEN,ScreenTransition.Cover)
+            Width: =37
+            X: =559
+            Y: =428
+            ZIndex: =16
+
+    Icon2 As icon.Hamburger:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =48
+        Icon: =Icon.Hamburger
+        OnSelect: =Notify("Tab Under Construction")
+        Width: =48
+        X: =48
+        Y: =34
+        ZIndex: =31
+
+    Image5 As image:
+        Height: |
+            =130
+        Image: =User().Image
+        RadiusBottomLeft: =Image5.Height
+        RadiusBottomRight: =Image5.Height
+        RadiusTopLeft: =Image5.Height
+        RadiusTopRight: =Image5.Height
+        Width: |
+            =130
+        X: =254
+        Y: =220
+        ZIndex: =32
+
+    Group28 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =32
+
+        Circle3 As circle:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(184, 0, 0, 1)
+            Height: =30
+            Visible: =false
+            Width: =30
+            X: =548
+            Y: =30
+            ZIndex: =26
+
+        Label13 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.Lato
+            Height: =24
+            Size: =15
+            Text: ="1"
+            Visible: =false
+            Width: =24
+            X: =551
+            Y: =33
+            ZIndex: =27
+
+    Icon1 As icon.Leave:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =45
+        Icon: =Icon.Leave
+        OnSelect: =Exit()
+        Width: =45
+        X: =555
+        Y: =35
+        ZIndex: =37
+
+    Group6 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =37
+
+        Label6_1 As label:
+            Color: =RGBA(0, 121, 146, 1)
+            Font: =Font.'Lato Black'
+            Height: =87
+            OnSelect: =Navigate('Personal KAIZEN Gallery',ScreenTransition.Cover)
+            Size: =28
+            Text: ="View KAIZEN"
+            Width: =415
+            X: =144
+            Y: =541
+            ZIndex: =12
+
+        Rectangle6_1 As rectangle:
+            Fill: =RGBA(0, 121, 146, 1)
+            Height: =1
+            OnSelect: =Navigate('Personal KAIZEN Gallery',ScreenTransition.Cover)
+            Width: =552
+            X: =44
+            Y: =648
+            ZIndex: =13
+
+        Icon6_1 As icon.ChevronRight:
+            Color: =RGBA(0, 121, 146, 1)
+            Height: =37
+            Icon: =Icon.ChevronRight
+            OnSelect: =Navigate('Personal KAIZEN Gallery',ScreenTransition.Cover)
+            Width: =37
+            X: =559
+            Y: =566
+            ZIndex: =17
+
+        Image8 As image:
+            Height: =53
+            Image: ='2_1'
+            Width: =53
+            X: =62
+            Y: =555
+            ZIndex: =34
+
+    Group7 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =37
+
+        Label6_2 As label:
+            Color: =RGBA(0, 121, 146, 1)
+            DisabledColor: =RGBA(202, 202, 202, 1)
+            DisplayMode: |
+                =If(
+                    !IsBlank(
+                        LookUp(
+                            Autonomation_5S_Users,
+                            Email = User().Email && 'Voting Access' = "Yes"
+                        )
+                    ),
+                    DisplayMode.Edit,
+                    DisplayMode.Disabled
+                )
+            Font: =Font.'Lato Black'
+            Height: =87
+            OnSelect: =Navigate('Vote KAIZEN',ScreenTransition.Cover)
+            Size: =28
+            Text: ="Vote KAIZEN"
+            Width: =415
+            X: =144
+            Y: =677
+            ZIndex: =14
+
+        Rectangle6_2 As rectangle:
+            DisplayMode: |
+                =If(
+                    !IsBlank(
+                        LookUp(
+                            Autonomation_5S_Users,
+                            Email = User().Email && 'Voting Access' = "Yes"
+                        )
+                    ),
+                    DisplayMode.Edit,
+                    DisplayMode.Disabled
+                )
+            Fill: =RGBA(0, 121, 146, 1)
+            Height: =1
+            OnSelect: =Navigate('Vote KAIZEN',ScreenTransition.Cover)
+            Width: =552
+            X: =44
+            Y: =779
+            ZIndex: =15
+
+        Icon6_2 As icon.ChevronRight:
+            Color: =RGBA(0, 121, 146, 1)
+            DisplayMode: |
+                =If(
+                    !IsBlank(
+                        LookUp(
+                            Autonomation_5S_Users,
+                            Email = User().Email && 'Voting Access' = "Yes"
+                        )
+                    ),
+                    DisplayMode.Edit,
+                    DisplayMode.Disabled
+                )
+            Height: =37
+            Icon: =Icon.ChevronRight
+            OnSelect: =Navigate('Vote KAIZEN',ScreenTransition.Cover)
+            Width: =37
+            X: =559
+            Y: =702
+            ZIndex: =18
+
+        Image8_1 As image:
+            Height: =55
+            Image: ='3_1'
+            Width: =55
+            X: =60
+            Y: =693
+            ZIndex: =35
+
+    Group29 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =37
+
+        Label6_4 As label:
+            Color: =RGBA(0, 121, 146, 1)
+            Font: =Font.'Lato Black'
+            Height: =87
+            OnSelect: =Navigate('Best KAIZEN Gallery',ScreenTransition.Cover)
+            Size: =28
+            Text: ="Best KAIZEN"
+            Width: =415
+            X: =148
+            Y: =804
+            ZIndex: =28
+
+        Rectangle6_18 As rectangle:
+            Fill: =RGBA(0, 121, 146, 1)
+            Height: =1
+            OnSelect: =Navigate('Best KAIZEN Gallery',ScreenTransition.Cover)
+            Width: =552
+            X: =48
+            Y: =906
+            ZIndex: =29
+
+        Icon6_4 As icon.ChevronRight:
+            Color: =RGBA(0, 121, 146, 1)
+            Height: =37
+            Icon: =Icon.ChevronRight
+            OnSelect: =Navigate('Best KAIZEN Gallery',ScreenTransition.Cover)
+            Width: =37
+            X: =563
+            Y: =829
+            ZIndex: =30
+
+        Image8_2 As image:
+            Height: =52
+            Image: ='1_2'
+            Width: =52
+            X: =61
+            Y: =821
+            ZIndex: =36
+
+    Group30 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =37
+
+        Label6_3 As label:
+            Color: =RGBA(0, 121, 146, 1)
+            Font: =Font.'Lato Black'
+            Height: =87
+            OnSelect: =Navigate('KAIZEN Champion Page',ScreenTransition.Cover)
+            Size: =28
+            Text: ="KAIZEN Champion Page"
+            Visible: |-
+                =If(
+                    !IsBlank(
+                        LookUp(
+                            Autonomation_5S_Users,
+                            Email = User().Email && 'KAIZEN Access Level' = "Admin"
+                        )
+                    ),
+                    true,
+                    false
+                )
+            Width: =448
+            X: =148
+            Y: =936
+            ZIndex: =21
+
+        Rectangle6_3 As rectangle:
+            Fill: =RGBA(0, 121, 146, 1)
+            Height: =1
+            OnSelect: =Navigate('KAIZEN Champion Page',ScreenTransition.Cover)
+            Visible: |-
+                =If(
+                    !IsBlank(
+                        LookUp(
+                            Autonomation_5S_Users,
+                            Email = User().Email && 'KAIZEN Access Level' = "Admin"
+                        )
+                    ),
+                    true,
+                    false
+                )
+            Width: =552
+            X: =48
+            Y: =1050
+            ZIndex: =22
+
+        Icon6_3 As icon.ChevronRight:
+            Color: =RGBA(0, 121, 146, 1)
+            Height: =37
+            Icon: =Icon.ChevronRight
+            OnSelect: =Navigate('KAIZEN Champion Page',ScreenTransition.Cover)
+            Visible: |-
+                =If(
+                    !IsBlank(
+                        LookUp(
+                            Autonomation_5S_Users,
+                            Email = User().Email && 'KAIZEN Access Level' = "Admin"
+                        )
+                    ),
+                    true,
+                    false
+                )
+            Width: =37
+            X: =563
+            Y: =962
+            ZIndex: =23
+
+        Icon5 As icon.Person:
+            Color: =RGBA(255, 153, 230, 1)
+            Height: =59
+            Icon: =Icon.Person
+            OnSelect: =Navigate('KAIZEN Champion Page',ScreenTransition.Cover)
+            Visible: |-
+                =If(
+                    !IsBlank(
+                        LookUp(
+                            Autonomation_5S_Users,
+                            Email = User().Email && 'KAIZEN Access Level' = "Admin"
+                        )
+                    ),
+                    true,
+                    false
+                )
+            Width: =59
+            X: =64
+            Y: =964
+            ZIndex: =24
+
+        Star1 As star:
+            Fill: =RGBA(255, 153, 230, 1)
+            Height: =32
+            Visible: |-
+                =If(
+                    !IsBlank(
+                        LookUp(
+                            Autonomation_5S_Users,
+                            Email = User().Email && 'KAIZEN Access Level' = "Admin"
+                        )
+                    ),
+                    true,
+                    false
+                )
+            Width: =32
+            X: =104
+            Y: =954
+            ZIndex: =33
+

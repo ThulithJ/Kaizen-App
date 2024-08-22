@@ -1,0 +1,16 @@
+App As appinfo:
+    BackEnabled: =true
+    OnStart: |-
+        =Set(isTimerRunning, false);
+        Refresh(Autonomation_5S_Users);
+        Refresh(Autonomation_KAIZEN_Submission);
+        Refresh(Autonomation_KAIZEN_Voting)
+    Theme: =PowerAppsTheme
+
+    Host As hostControl.DefaultHostControlVariant:
+        OnCancel: =false
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
+

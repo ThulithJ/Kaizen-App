@@ -1,0 +1,357 @@
+"'Display KAIZEN' As screen":
+
+    Rectangle5_2 As rectangle:
+        Fill: =RGBA(0, 121, 146, 1)
+        Height: =1136
+        Width: =640
+        ZIndex: =1
+
+    Button4_2 As button:
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =834
+        HoverFill: =RGBA(255, 255, 255, 1)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =80
+        RadiusTopRight: =80
+        Size: =24
+        Text: =""
+        Width: =640
+        Y: =302
+        ZIndex: =4
+
+    Label14 As label:
+        Color: =RGBA(0, 121, 146, 1)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        PaddingLeft: =0
+        Size: =22
+        Text: ="Name"
+        Width: =91
+        X: =48
+        Y: =376
+        ZIndex: =12
+
+    Label14_1 As label:
+        Color: =RGBA(0, 121, 146, 1)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        PaddingLeft: =0
+        Size: =22
+        Text: ="EPF Number"
+        Width: =179
+        X: =403
+        Y: =376
+        ZIndex: =13
+
+    Rectangle6_8 As rectangle:
+        Fill: =RGBA(0, 121, 146, 1)
+        Height: =1
+        Width: =280
+        X: =44
+        Y: =476
+        ZIndex: =14
+
+    Rectangle6_9 As rectangle:
+        Fill: =RGBA(0, 121, 146, 1)
+        Height: =1
+        Width: =165
+        X: =403
+        Y: =475
+        ZIndex: =15
+
+    Label14_2 As label:
+        Color: =RGBA(0, 121, 146, 1)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        PaddingLeft: =0
+        Size: =22
+        Text: ="KAIZEN Name"
+        Width: =276
+        X: =48
+        Y: =548
+        ZIndex: =16
+
+    Rectangle6_10 As rectangle:
+        Fill: =RGBA(0, 121, 146, 1)
+        Height: =1
+        Width: =520
+        X: =48
+        Y: =665
+        ZIndex: =17
+
+    Label14_3 As label:
+        Color: =RGBA(0, 121, 146, 1)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        PaddingLeft: =0
+        Size: =22
+        Text: ="KAIZEN Description"
+        Width: =276
+        X: =48
+        Y: =718
+        ZIndex: =18
+
+    Rectangle6_11 As rectangle:
+        Fill: =RGBA(0, 121, 146, 1)
+        Height: =1
+        Width: =520
+        X: =48
+        Y: =912
+        ZIndex: =19
+
+    TextInput2 As text:
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(116, 116, 116, 1)
+        Default: =Gallery2.Selected.'KAIZEN Name'
+        DisplayMode: =If(EditVar=true,DisplayMode.Edit,DisplayMode.Disabled)
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.Lato
+        Height: =42
+        HoverColor: =RGBA(116, 116, 116, 1)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        OnChange: =Set(VarKName,TextInput2.Text)
+        PaddingLeft: =0
+        PressedFill: =
+        Size: =18
+        Width: =524
+        X: =44
+        Y: =620
+        ZIndex: =20
+
+    TextInput2_1 As text:
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(116, 116, 116, 1)
+        Default: =Gallery2.Selected.'KAIZEN Description'
+        DisplayMode: =If(EditVar=true,DisplayMode.Edit,DisplayMode.Disabled)
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.Lato
+        Height: =124
+        HoverColor: =RGBA(116, 116, 116, 1)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        OnChange: =Set(VarKDes,TextInput2_1.Text)
+        PaddingLeft: =0
+        PressedFill: =
+        Size: =18
+        Width: =524
+        X: =48
+        Y: =788
+        ZIndex: =21
+
+    ComboBox1_2 As combobox:
+        BorderStyle: =BorderStyle.None
+        ChevronBackground: =RGBA(0, 0, 0, 0)
+        ChevronDisabledBackground: =RGBA(0, 0, 0, 0)
+        ChevronDisabledFill: =RGBA(0, 121, 146, 1)
+        ChevronFill: =RGBA(0, 121, 146, 1)
+        DefaultSelectedItems: |-
+            ={Value:Gallery2.Selected.Title}
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(116, 116, 116, 1)
+        DisabledFill: =RGBA(237, 237, 237, 1)
+        DisplayFields: =["Value"]
+        DisplayMode: =If(EditVar=true,DisplayMode.Edit,DisplayMode.Disabled)
+        Font: =Font.Lato
+        Height: =39
+        InputTextPlaceholder: =""
+        Items: =SortByColumns(Distinct(Autonomation_5S_Users,'Name (Title)'),"Value",SortOrder.Ascending)
+        OnChange: =Set(VarName,Concat(ComboBox1_2.SelectedItems,Value,","))
+        PaddingLeft: =0
+        PaddingRight: =0
+        SearchFields: =["Value"]
+        SearchItems: =Search(SortByColumns(Distinct(Autonomation_5S_Users,'Name (Title)'),"Value",SortOrder.Ascending),ComboBox1_2.SearchText,Value)
+        Size: =18
+        Width: =292
+        X: =44
+        Y: =435
+        ZIndex: =22
+
+    ComboBox1_3 As combobox:
+        BorderStyle: =BorderStyle.None
+        ChevronBackground: =RGBA(0, 0, 0, 0)
+        ChevronDisabledBackground: =RGBA(0, 0, 0, 0)
+        ChevronDisabledFill: =RGBA(0, 121, 146, 1)
+        ChevronFill: =RGBA(0, 121, 146, 1)
+        DefaultSelectedItems: |-
+            ={Value:Gallery2.Selected.'EPF Number'}
+        DisplayFields: =["Value"]
+        DisplayMode: =If(EditVar=true,DisplayMode.Edit,DisplayMode.Disabled)
+        Font: =Font.Lato
+        Height: =39
+        InputTextPlaceholder: =""
+        IsSearchable: =false
+        Items: =SortByColumns(Distinct(Autonomation_5S_Users,'EPF Number'),"Value",SortOrder.Ascending)
+        OnChange: =Set(VarEPF,Concat(ComboBox1_3.SelectedItems,Value,","))
+        PaddingLeft: =0
+        PaddingRight: =0
+        SearchFields: =["Value"]
+        SearchItems: =[]
+        Size: =18
+        Width: =179
+        X: =403
+        Y: =435
+        ZIndex: =23
+
+    Group14 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =24
+
+        Icon2_6 As icon.ChevronLeft:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =26
+            Icon: =Icon.ChevronLeft
+            OnSelect: |-
+                =Set(EditVar,false);
+                Navigate('Personal KAIZEN Gallery',ScreenTransition.CoverRight)
+            Width: =26
+            X: =18
+            Y: =34
+            ZIndex: =6
+
+        Label1_2 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.Lato
+            Height: =34
+            OnSelect: |-
+                =Set(EditVar,false);
+                Navigate('Personal KAIZEN Gallery',ScreenTransition.CoverRight)
+            Size: =18
+            Text: ="Back"
+            Width: =69
+            X: =48
+            Y: =30
+            ZIndex: =7
+
+    Group13 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =24
+
+        Button7_1 As button:
+            BorderStyle: =BorderStyle.None
+            DisplayMode: =If(EditVar=true,DisplayMode.Edit,DisplayMode.Disabled)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =100
+            HoverFill: =RGBA(255, 255, 255, 1)
+            OnSelect: |-
+                =Patch(Autonomation_KAIZEN_Submission,LookUp(Autonomation_KAIZEN_Submission,ID=Gallery2.Selected.ID),
+                {
+                    Title:VarName,
+                    'EPF Number':VarEPF,
+                    'KAIZEN Name':VarKName,
+                    'KAIZEN Description':VarKDes
+                }
+                );
+                Set(EditVar,false);
+                Navigate('Suggestion Saved')
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =24
+            Text: =""
+            Width: =100
+            X: =387
+            Y: =109
+            ZIndex: =2
+
+        Icon10 As icon.Save:
+            Color: =RGBA(0, 121, 146, 1)
+            DisabledColor: =RGBA(116, 116, 116, 1)
+            DisplayMode: =If(EditVar=true,DisplayMode.Edit,DisplayMode.Disabled)
+            Icon: =Icon.Save
+            OnSelect: |-
+                =Patch(Autonomation_KAIZEN_Submission,LookUp(Autonomation_KAIZEN_Submission,ID=Gallery2.Selected.ID),
+                {
+                    Title:VarName,
+                    'EPF Number':VarEPF,
+                    'KAIZEN Name':VarKName,
+                    'KAIZEN Description':VarKDes
+                }
+                );
+                Set(EditVar,false);
+                Navigate('Suggestion Saved')
+            X: =405
+            Y: =128
+            ZIndex: =9
+
+        Label1_4 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =If(EditVar=true,DisplayMode.Edit,DisplayMode.Disabled)
+            Font: =Font.Lato
+            Height: =34
+            OnSelect: |-
+                =Patch(Autonomation_KAIZEN_Submission,LookUp(Autonomation_KAIZEN_Submission,ID=Gallery2.Selected.ID),
+                {
+                    Title:VarName,
+                    'EPF Number':VarEPF,
+                    'KAIZEN Name':VarKName,
+                    'KAIZEN Description':VarKDes
+                }
+                );
+                Set(EditVar,false);
+                Navigate('Suggestion Saved')
+            Size: =18
+            Text: ="Save"
+            Width: =69
+            X: =402
+            Y: =219
+            ZIndex: =11
+
+    Group15 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =24
+
+        Button7 As button:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =100
+            HoverFill: =RGBA(255, 255, 255, 1)
+            OnSelect: =Set(EditVar,true)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =24
+            Text: =""
+            Width: =100
+            X: =154
+            Y: =110
+            ZIndex: =3
+
+        Icon9 As icon.Edit:
+            Color: =RGBA(0, 121, 146, 1)
+            Icon: =Icon.Edit
+            OnSelect: =Set(EditVar,true)
+            X: =172
+            Y: =128
+            ZIndex: =8
+
+        Label1_3 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.Lato
+            Height: =34
+            OnSelect: =Set(EditVar,true)
+            Size: =18
+            Text: ="Edit"
+            Width: =69
+            X: =169
+            Y: =220
+            ZIndex: =10
+

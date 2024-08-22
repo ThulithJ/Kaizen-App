@@ -1,0 +1,328 @@
+"'Vote KAIZEN_3' As screen":
+
+    Rectangle1_7 As rectangle:
+        Fill: =RGBA(0, 121, 146, 1)
+        Height: =1136
+        Width: =640
+        ZIndex: =1
+
+    Button1_7 As button:
+        BorderThickness: =0
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =804
+        HoverFill: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(255, 255, 255, 1)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =80
+        RadiusTopRight: =80
+        Size: =24
+        Text: =""
+        Width: =640
+        Y: =332
+        ZIndex: =2
+
+    Image1_7 As image:
+        Height: =309
+        Image: ='1'
+        Width: =250
+        X: =390
+        Y: =23
+        ZIndex: =3
+
+    Label8_7 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Bold
+        Height: =70
+        Size: =22
+        Text: ="Vote KAIZEN"
+        Width: =314
+        X: =44
+        Y: =81
+        ZIndex: =4
+
+    Label10_7 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.Lato
+        Height: =127
+        Size: =22
+        Text: ="Please provide marks for each category from 1 to 5 where 1 being the lowest."
+        Width: =346
+        X: =44
+        Y: =151
+        ZIndex: =7
+
+    Button3_12 As button:
+        Fill: =RGBA(0, 121, 146, 1)
+        Font: =Font.Lato
+        Height: =70
+        HoverFill: =RGBA(0, 121, 146, 1)
+        OnSelect: |-
+            =Patch(
+                Autonomation_KAIZEN_Voting,
+                Defaults(Autonomation_KAIZEN_Voting),
+                {
+                    Title: Gallery3.Selected.'KAIZEN Name',
+                    Month:Gallery3.Selected.Month,
+                    'KAIZEN ID':Gallery3.Selected.ID,
+                    Safety: If("Safety" in ComboBox1_5.SelectedItems, 1, 0),
+                    Quality: If("Quality" in ComboBox1_5.SelectedItems, 1, 0),
+                    Delivery: If("Delivery" in ComboBox1_5.SelectedItems, 1, 0),
+                    Cost: If("Cost" in ComboBox1_5.SelectedItems, 1, 0),
+                    Morale: If("Morale" in ComboBox1_5.SelectedItems, 1, 0),
+                    Creativity: ComboBox1_6.Selected.Value,
+                    Commitment: ComboBox1_7.Selected.Value,
+                    Sustainability: ComboBox1_8.Selected.Value,
+                    Implementation: ComboBox1_9.Selected.Value
+                }
+            );
+            Reset(ComboBox1_4);
+            Reset(ComboBox1_5);
+            Reset(ComboBox1_6);
+            Reset(ComboBox1_7);
+            Reset(ComboBox1_8);
+            Reset(ComboBox1_9);
+            Navigate('Vote Submitted Screen')
+        RadiusBottomLeft: =40
+        RadiusBottomRight: =40
+        RadiusTopLeft: =40
+        RadiusTopRight: =40
+        Size: =24
+        Text: ="Submit"
+        Width: =545
+        X: =44
+        Y: =890
+        ZIndex: =11
+
+    Button3_13 As button:
+        Fill: =RGBA(116, 116, 116, 1)
+        Font: =Font.Lato
+        Height: =70
+        HoverFill: =RGBA(0, 121, 146, 1)
+        OnSelect: =Navigate('Home Screen')
+        RadiusBottomLeft: =40
+        RadiusBottomRight: =40
+        RadiusTopLeft: =40
+        RadiusTopRight: =40
+        Size: =24
+        Text: ="Cancel"
+        Width: =545
+        X: =44
+        Y: =998
+        ZIndex: =12
+
+    Group3 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =13
+
+        Label11_6 As label:
+            Color: =RGBA(0, 121, 146, 1)
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =70
+            Size: =22
+            Text: ="Creativity"
+            Width: =324
+            X: =44
+            Y: =391
+            ZIndex: =8
+
+        ComboBox1_6 As combobox:
+            BorderStyle: =BorderStyle.None
+            ChevronBackground: =RGBA(0, 0, 0, 0)
+            ChevronFill: =RGBA(0, 121, 146, 1)
+            DefaultSelectedItems: =["1"]
+            DisplayFields: =["Value"]
+            Font: =Font.Lato
+            Height: =70
+            InputTextPlaceholder: =""
+            IsSearchable: =false
+            Items: =["1","2","3","4","5"]
+            SearchFields: =["Value"]
+            SearchItems: =[]
+            SelectMultiple: =false
+            Size: =22
+            Width: =126
+            X: =435
+            Y: =391
+            ZIndex: =9
+
+        Rectangle6_14 As rectangle:
+            Fill: =RGBA(0, 121, 146, 1)
+            Height: =1
+            X: =411
+            Y: =461
+            ZIndex: =10
+
+    Group3_1 As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =16
+
+        Label11_7 As label:
+            Color: =RGBA(0, 121, 146, 1)
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =70
+            Size: =22
+            Text: ="Commitment"
+            Width: =324
+            X: =44
+            Y: =503
+            ZIndex: =13
+
+        ComboBox1_7 As combobox:
+            BorderStyle: =BorderStyle.None
+            ChevronBackground: =RGBA(0, 0, 0, 0)
+            ChevronFill: =RGBA(0, 121, 146, 1)
+            DefaultSelectedItems: =["1"]
+            DisplayFields: =["Value"]
+            Font: =Font.Lato
+            Height: =70
+            InputTextPlaceholder: =""
+            IsSearchable: =false
+            Items: =["1","2","3","4","5"]
+            SearchFields: =["Value"]
+            SearchItems: =[]
+            SelectMultiple: =false
+            Size: =22
+            Width: =126
+            X: =435
+            Y: =503
+            ZIndex: =14
+
+        Rectangle6_15 As rectangle:
+            Fill: =RGBA(0, 121, 146, 1)
+            Height: =1
+            X: =411
+            Y: =573
+            ZIndex: =15
+
+    Group3_2 As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =19
+
+        Label11_8 As label:
+            Color: =RGBA(0, 121, 146, 1)
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =70
+            Size: =22
+            Text: ="Sustainability"
+            Width: =324
+            X: =44
+            Y: =620
+            ZIndex: =16
+
+        ComboBox1_8 As combobox:
+            BorderStyle: =BorderStyle.None
+            ChevronBackground: =RGBA(0, 0, 0, 0)
+            ChevronFill: =RGBA(0, 121, 146, 1)
+            DefaultSelectedItems: =["1"]
+            DisplayFields: =["Value"]
+            Font: =Font.Lato
+            Height: =70
+            InputTextPlaceholder: =""
+            IsSearchable: =false
+            Items: =["1","2","3","4","5"]
+            SearchFields: =["Value"]
+            SearchItems: =[]
+            SelectMultiple: =false
+            Size: =22
+            Width: =126
+            X: =435
+            Y: =620
+            ZIndex: =17
+
+        Rectangle6_16 As rectangle:
+            Fill: =RGBA(0, 121, 146, 1)
+            Height: =1
+            X: =411
+            Y: =690
+            ZIndex: =18
+
+    Group3_3 As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =22
+
+        Label11_9 As label:
+            Color: =RGBA(0, 121, 146, 1)
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =70
+            Size: =22
+            Text: ="Implementation"
+            Width: =324
+            X: =44
+            Y: =750
+            ZIndex: =19
+
+        ComboBox1_9 As combobox:
+            BorderStyle: =BorderStyle.None
+            ChevronBackground: =RGBA(0, 0, 0, 0)
+            ChevronFill: =RGBA(0, 121, 146, 1)
+            DefaultSelectedItems: =["1"]
+            DisplayFields: =["Value"]
+            Font: =Font.Lato
+            Height: =70
+            InputTextPlaceholder: =""
+            IsSearchable: =false
+            Items: =["1","2","3","4","5"]
+            SearchFields: =["Value"]
+            SearchItems: =[]
+            SelectMultiple: =false
+            Size: =22
+            Width: =126
+            X: =435
+            Y: =750
+            ZIndex: =20
+
+        Rectangle6_17 As rectangle:
+            Fill: =RGBA(0, 121, 146, 1)
+            Height: =1
+            X: =411
+            Y: =820
+            ZIndex: =21
+
+    Group19 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =22
+
+        Label9_7 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.Lato
+            Height: =47
+            OnSelect: =Navigate('Vote KAIZEN_2',ScreenTransition.CoverRight)
+            Size: =18
+            Text: ="Back"
+            Width: =89
+            X: =44
+            Y: =23
+            ZIndex: =5
+
+        Icon2_11 As icon.ChevronLeft:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =26
+            Icon: =Icon.ChevronLeft
+            OnSelect: =Navigate('Vote KAIZEN_2',ScreenTransition.CoverRight)
+            Width: =26
+            X: =18
+            Y: =34
+            ZIndex: =6
+

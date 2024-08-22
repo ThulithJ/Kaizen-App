@@ -1,0 +1,40 @@
+{
+  "23a74d00-b0bb-4a2b-8e48-b4dfaaace1d3": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read",
+      "providers/PowerPlatform.Governance/Operations/Write",
+      "providers/PowerPlatform.Governance/Operations/Delete"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1697/1.0.1697.3784/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://massl-my.sharepoint.com/personal/intimodigital_masholdings_com": {
+        "dataSources": {
+          "Autonomation_5S_Users": {
+            "tableName": "31959035-6182-4804-a9a9-007b1316e4fe"
+          },
+          "Autonomation_KAIZEN_Submission": {
+            "tableName": "bd0c218c-e930-4f87-a4a2-4277bc4f50ec"
+          },
+          "Autonomation_KAIZEN_Voting": {
+            "tableName": "548d292e-3137-425a-a00b-0460cda0cc9b"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Autonomation_5S_Users",
+      "Autonomation_KAIZEN_Submission",
+      "Autonomation_KAIZEN_Voting"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "23a74d00-b0bb-4a2b-8e48-b4dfaaace1d3"
+  }
+}

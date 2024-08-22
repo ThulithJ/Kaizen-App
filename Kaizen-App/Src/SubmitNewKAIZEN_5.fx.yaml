@@ -1,0 +1,182 @@
+SubmitNewKAIZEN_5 As screen:
+
+    Rectangle1_9 As rectangle:
+        Fill: =RGBA(0, 121, 146, 1)
+        Height: =1136
+        Width: =640
+        ZIndex: =1
+
+    Button1_9 As button:
+        BorderThickness: =0
+        DisabledFill: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =804
+        HoverFill: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(255, 255, 255, 1)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =80
+        RadiusTopRight: =80
+        Size: =24
+        Text: =""
+        Width: =640
+        Y: =332
+        ZIndex: =2
+
+    Image1_9 As image:
+        Height: =309
+        Image: ='3'
+        Width: =250
+        X: =390
+        Y: =23
+        ZIndex: =3
+
+    Label8_9 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Bold
+        Height: =70
+        Size: =22
+        Text: ="Submit a new KAIZEN"
+        Width: =314
+        X: =44
+        Y: =81
+        ZIndex: =4
+
+    Label10_9 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.Lato
+        Height: =127
+        Size: =22
+        Text: ="Please select name of secondary KAIZEN holders."
+        Width: =346
+        X: =44
+        Y: =151
+        ZIndex: =7
+
+    Label11_11 As label:
+        Color: =RGBA(0, 121, 146, 1)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Semibold
+        Height: =70
+        Size: =22
+        Text: ="Name of secondary KAIZEN holder"
+        Width: =556
+        X: =44
+        Y: =391
+        ZIndex: =8
+
+    ComboBox1_11 As combobox:
+        BorderStyle: =BorderStyle.None
+        ChevronBackground: =RGBA(0, 0, 0, 0)
+        ChevronFill: =RGBA(0, 121, 146, 1)
+        ChevronHoverBackground: =
+        ChevronHoverFill: =RGBA(0, 121, 146, 1)
+        Color: =RGBA(0, 121, 146, 1)
+        DisplayFields: =["Title","EPFNumber"]
+        Font: =Font.Lato
+        Height: =70
+        InputTextPlaceholder: ="Search & Select from the list"
+        IsSearchable: =false
+        Items: |-
+            =//SortByColumns(Distinct(Autonomation_5S_Users,'Name (Title)'),"Value",SortOrder.Ascending)
+            Sort(Autonomation_5S_Users,'Name (Title)',SortOrder.Ascending)
+        PressedFill: =RGBA(0, 121, 146, 1)
+        SearchFields: =["Title"]
+        SearchItems: |-
+            =Search(//SortByColumns(Distinct(Autonomation_5S_Users,'Name (Title)'),"Value",SortOrder.Ascending)
+            Sort(Autonomation_5S_Users,'Name (Title)',SortOrder.Ascending),ComboBox1_11.SearchText,'Name (Title)')
+        SelectMultiple: =false
+        Size: =22
+        Template: =ListItemTemplate.Double
+        Width: =556
+        X: =44
+        Y: =461
+        ZIndex: =9
+
+    Rectangle6_25 As rectangle:
+        Fill: =RGBA(0, 121, 146, 1)
+        Height: =1
+        Width: =545
+        X: =44
+        Y: =531
+        ZIndex: =10
+
+    Button3_16 As button:
+        Fill: =RGBA(0, 121, 146, 1)
+        Font: =Font.Lato
+        Height: =70
+        HoverFill: =RGBA(0, 121, 146, 1)
+        OnSelect: |-
+            =//Set(VarName,Concat(ComboBox1.SelectedItems,Value,", "));
+            Set(VarSName,ComboBox1_11.Selected.'Name (Title)');
+            
+            If(IsBlank(ComboBox1_11.Selected.'Name (Title)'),Notify("Fields marked as * are required"),Navigate(SubmitNewKAIZEN_4))
+        RadiusBottomLeft: =40
+        RadiusBottomRight: =40
+        RadiusTopLeft: =40
+        RadiusTopRight: =40
+        Size: =24
+        Text: ="Next"
+        Width: =545
+        X: =44
+        Y: =890
+        ZIndex: =11
+
+    Button3_17 As button:
+        Fill: =RGBA(116, 116, 116, 1)
+        Font: =Font.Lato
+        Height: =70
+        HoverFill: =RGBA(149, 149, 149, 1)
+        OnSelect: |-
+            =Set(VarName,Blank());
+            Set(VarMonth,Blank());
+            Set(VarEPF,Blank());
+            Set(VarKName,Blank());
+            Set(VarKDes,Blank());
+            Reset(ComboBox1_11);
+            Navigate('Home Screen')
+        RadiusBottomLeft: =40
+        RadiusBottomRight: =40
+        RadiusTopLeft: =40
+        RadiusTopRight: =40
+        Size: =24
+        Text: ="Cancel"
+        Width: =545
+        X: =44
+        Y: =998
+        ZIndex: =12
+
+    Group2_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =13
+
+        Label9_9 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.Lato
+            Height: =47
+            OnSelect: |-
+                =Navigate('Home Screen',ScreenTransition.CoverRight);
+                Reset(ComboBox1_11)
+            Size: =18
+            Text: ="Back"
+            Width: =89
+            X: =44
+            Y: =23
+            ZIndex: =5
+
+        Icon2_21 As icon.ChevronLeft:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =26
+            Icon: =Icon.ChevronLeft
+            OnSelect: |-
+                =Navigate('Home Screen',ScreenTransition.CoverRight);
+                Reset(ComboBox1_11)
+            Width: =26
+            X: =18
+            Y: =34
+            ZIndex: =6
+

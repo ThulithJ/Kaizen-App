@@ -1,0 +1,222 @@
+"'Best KAIZEN Gallery' As screen":
+    OnVisible: =Refresh(Autonomation_KAIZEN_Submission)
+
+    Rectangle5_4 As rectangle:
+        Fill: =RGBA(0, 121, 146, 1)
+        Height: =1136
+        Width: =640
+        ZIndex: =1
+
+    Image3 As image:
+        Height: =265
+        Image: ='2'
+        Width: =257
+        X: =370
+        Y: =19
+        ZIndex: =2
+
+    Button4_4 As button:
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =851
+        HoverFill: =RGBA(255, 255, 255, 1)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =80
+        RadiusTopRight: =80
+        Size: =24
+        Text: =""
+        Width: =640
+        Y: =285
+        ZIndex: =3
+
+    Label5_2 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Semibold
+        Height: =142
+        Size: =28
+        Text: ="Best KAIZEN Gallery"
+        Width: =263
+        X: =48
+        Y: =64
+        ZIndex: =4
+
+    "Gallery2_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        '#CopilotOverlayLabel': ="Filtered"
+        BorderStyle: =BorderStyle.None
+        DelayItemLoading: =true
+        Fill: =RGBA(237, 237, 237, 1)
+        Height: =791
+        Items: |
+            =SortByColumns(Filter(Autonomation_KAIZEN_Submission,Month=Dropdown3.Selected.Value && Status= "Completed"),("AverageTotal"),SortOrder.Descending)
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =126
+        Width: =541
+        X: =49
+        Y: =315
+        ZIndex: =7
+
+        Title2_1 As label:
+            Font: =Font.Lato
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Title
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 173
+            X: =94
+            Y: =29
+            ZIndex: =2
+
+        Subtitle2_1 As label:
+            Font: =Font.Lato
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Month
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title2_1.Width
+            X: =94
+            Y: =53
+            ZIndex: =3
+
+        NextArrow1_1 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(0, 121, 146, 1)
+            DisabledBorderColor: =RGBA(56, 56, 56, 1)
+            DisabledColor: =RGBA(119, 119, 119, 1)
+            Height: =50
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Tooltip: ="View item details"
+            Width: =50
+            X: =Parent.TemplateWidth - Self.Width - 12
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =4
+
+        Separator1_1 As rectangle:
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =5
+
+        Rectangle3_1 As rectangle:
+            Fill: =RGBA(255, 153, 230, 1)
+            Height: =Parent.TemplateHeight - Separator1_1.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =4
+            ZIndex: =6
+
+        Image6 As image:
+            Height: =74
+            OnSelect: =Select(Parent)
+            Width: =48
+            X: =29
+            Y: =26
+            ZIndex: =7
+
+        Image7 As image:
+            Height: =70
+            Image: ='1-removebg-preview'
+            OnSelect: =Select(Parent)
+            Visible: |
+                =ThisItem.ID= First(SortByColumns(Filter(Autonomation_KAIZEN_Submission,Month=Dropdown3.Selected.Value),"AverageTotal",SortOrder.Descending)).ID
+            Width: =180
+            X: =333
+            Y: =26
+            ZIndex: =8
+
+        Image9 As image:
+            Height: |
+                =70
+            Image: ='2-removebg-preview'
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.ID= Last(FirstN(SortByColumns(Filter(Autonomation_KAIZEN_Submission,Month=Dropdown3.Selected.Value),"AverageTotal",SortOrder.Descending),2)).ID
+            Width: =180
+            X: =333
+            Y: =26
+            ZIndex: =9
+
+        Image10 As image:
+            Height: =70
+            Image: ='3-removebg-preview'
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.ID= Last(FirstN(SortByColumns(Filter(Autonomation_KAIZEN_Submission,Month=Dropdown3.Selected.Value),"AverageTotal",SortOrder.Descending),3)).ID
+            Width: =180
+            X: =333
+            Y: =26
+            ZIndex: =10
+
+        Subtitle2_4 As label:
+            Font: =Font.Lato
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.'KAIZEN Name'
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title2_1.Width
+            X: =94
+            Y: =75
+            ZIndex: =11
+
+    Dropdown3 As dropdown:
+        Height: =46
+        Items: =SortByColumns(Distinct(Autonomation_KAIZEN_Submission,Month),"Value",SortOrder.Ascending)
+        Size: =11
+        Width: =156
+        X: =49
+        Y: =206
+        ZIndex: =8
+
+    Group20 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =8
+
+        Icon2_12 As icon.ChevronLeft:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =26
+            Icon: =Icon.ChevronLeft
+            OnSelect: =Navigate('Home Screen',ScreenTransition.CoverRight)
+            Width: =26
+            X: =18
+            Y: =34
+            ZIndex: =5
+
+        Label1_6 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.Lato
+            Height: =34
+            OnSelect: =Navigate('Home Screen',ScreenTransition.CoverRight)
+            Size: =18
+            Text: ="Back"
+            Width: =69
+            X: =48
+            Y: =30
+            ZIndex: =6
+

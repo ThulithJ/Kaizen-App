@@ -1,0 +1,63 @@
+"'Vote Submitted Screen' As screen":
+
+    Rectangle2_2 As rectangle:
+        BorderStyle: =BorderStyle.None
+        Fill: =RGBA(0, 121, 146, 1)
+        Height: =1136
+        Width: =640
+        ZIndex: =1
+
+    Icon7_2 As icon.CheckBadge:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =136
+        Icon: =Icon.CheckBadge
+        Width: =136
+        X: =252
+        Y: =337
+        ZIndex: =2
+
+    Label12_3 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.Lato
+        Height: =190
+        Size: =22
+        Text: ="You have successfully submitted your voting for KAIZEN NAME."
+        Width: =560
+        X: =40
+        Y: =473
+        ZIndex: =4
+
+    Button5_2 As button:
+        BorderColor: =RGBA(255, 255, 255, 1)
+        BorderThickness: =4
+        DisabledColor: =RGBA(26, 26, 26, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.Lato
+        Height: =55
+        HoverFill: =
+        OnSelect: =Navigate('Vote KAIZEN_1')
+        PressedColor: =RGBA(26, 26, 26, 1)
+        RadiusBottomLeft: =40
+        RadiusBottomRight: =40
+        RadiusTopLeft: =40
+        RadiusTopRight: =40
+        Size: =22
+        Text: ="Okay"
+        Width: =220
+        X: =210
+        Y: =777
+        ZIndex: =5
+
+    Label12_4 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.Lato
+        Height: =190
+        Size: =22
+        Text: ="Check best KAIZEN library for the winner of the month."
+        Width: =560
+        X: =40
+        Y: =587
+        ZIndex: =6
+

@@ -1,0 +1,194 @@
+"'Approved KAIZEN LIst' As screen":
+
+    Rectangle5_8 As rectangle:
+        Fill: =RGBA(0, 121, 146, 1)
+        Height: =1136
+        Width: =640
+        ZIndex: =1
+
+    Image3_3 As image:
+        Height: =265
+        Image: ='2'
+        Width: =257
+        X: =370
+        Y: =19
+        ZIndex: =2
+
+    Button4_8 As button:
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =0
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =851
+        HoverFill: =RGBA(255, 255, 255, 1)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =80
+        RadiusTopRight: =80
+        Size: =24
+        Text: =""
+        Width: =640
+        Y: =285
+        ZIndex: =3
+
+    Label5_6 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Semibold
+        Height: =142
+        Size: =28
+        Text: ="Approved KAIZEN List"
+        Width: =263
+        X: =48
+        Y: =64
+        ZIndex: =4
+
+    "Gallery2_3 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        '#CopilotOverlayLabel': ="Filtered"
+        BorderStyle: =BorderStyle.None
+        DelayItemLoading: =true
+        Fill: =RGBA(237, 237, 237, 1)
+        Height: =733
+        Items: =Filter(Autonomation_KAIZEN_Submission,Status="Approved"Or Status="Implemented" && Month=Dropdown5.Selected.Value)
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        OnSelect: =Navigate('Approved KAIZEN List Individual',ScreenTransition.Cover)
+        TemplatePadding: =0
+        TemplateSize: =126
+        Width: =541
+        X: =44
+        Y: =347
+        ZIndex: =7
+
+        Title2_3 As label:
+            Font: =Font.Lato
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.'KAIZEN Name'
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 173
+            X: =36
+            Y: =55
+            ZIndex: =2
+
+        Subtitle2_3 As label:
+            Font: =Font.Lato
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Month
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title2_3.Width
+            X: =Title2_3.X
+            Y: =80
+            ZIndex: =3
+
+        NextArrow1_3 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(0, 121, 146, 1)
+            DisabledBorderColor: =RGBA(56, 56, 56, 1)
+            DisabledColor: =RGBA(119, 119, 119, 1)
+            Height: =50
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Tooltip: ="View item details"
+            Width: =50
+            X: =Parent.TemplateWidth - Self.Width - 12
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =4
+
+        Separator1_3 As rectangle:
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =5
+
+        Rectangle3_3 As rectangle:
+            Fill: =RGBA(255, 153, 230, 1)
+            Height: =Parent.TemplateHeight - Separator1_3.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =4
+            ZIndex: =6
+
+        Title2_5 As label:
+            Font: =Font.Lato
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Title
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 173
+            X: =36
+            Y: =25
+            ZIndex: =7
+
+        Button6_2 As button:
+            BorderColor: =
+            BorderStyle: =BorderStyle.None
+            Fill: =If(ThisItem.Status="Suggested",RGBA(237, 173, 231, 1),If(ThisItem.Status="Rejected",RGBA(246, 81, 29, 1),If(ThisItem.Status="Approved",RGBA(255, 180, 0, 1),If(ThisItem.Status="Implemented",RGBA(117, 221, 221, 1),RGBA(9, 188, 138, 1)))))
+            Height: =49
+            OnSelect: =Select(Parent)
+            Size: =24
+            Text: =If(ThisItem.Status="Suggested","S",If(ThisItem.Status="Rejected","R",If(ThisItem.Status="Approved","A",If(ThisItem.Status="Implemented","I","C"))))
+            Width: =48
+            X: =431
+            Y: =38
+            ZIndex: =9
+
+    Dropdown5 As dropdown:
+        Height: =44
+        Items: =SortByColumns(Distinct(Autonomation_KAIZEN_Submission,Month),"Value",SortOrder.Ascending)
+        Width: =114
+        X: =72
+        Y: =206
+        ZIndex: =8
+
+    Group24 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =8
+
+        Icon2_17 As icon.ChevronLeft:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =26
+            Icon: =Icon.ChevronLeft
+            OnSelect: =Navigate('KAIZEN Champion Page',ScreenTransition.CoverRight)
+            Width: =26
+            X: =18
+            Y: =34
+            ZIndex: =5
+
+        Label1_10 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.Lato
+            Height: =34
+            OnSelect: =Navigate('KAIZEN Champion Page',ScreenTransition.CoverRight)
+            Size: =18
+            Text: ="Back"
+            Width: =69
+            X: =48
+            Y: =30
+            ZIndex: =6
+
